@@ -1,0 +1,285 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		49A4C6011363C48D00515897 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49A4C6001363C48D00515897 /* Cocoa.framework */; };
+		49A4C60B1363C48D00515897 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 49A4C6091363C48D00515897 /* InfoPlist.strings */; };
+		49A4C60E1363C48D00515897 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 49A4C60D1363C48D00515897 /* main.m */; };
+		49A4C6111363C48D00515897 /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 49A4C60F1363C48D00515897 /* Credits.rtf */; };
+		49A4C6141363C48D00515897 /* XKCD_ReaderAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 49A4C6131363C48D00515897 /* XKCD_ReaderAppDelegate.m */; };
+		49A4C6171363C48D00515897 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 49A4C6151363C48D00515897 /* MainMenu.xib */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		49A4C5FC1363C48D00515897 /* XKCD Reader.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "XKCD Reader.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		49A4C6001363C48D00515897 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
+		49A4C6031363C48D00515897 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
+		49A4C6041363C48D00515897 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		49A4C6051363C48D00515897 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		49A4C6081363C48D00515897 /* XKCD Reader-Info.plist */ = {isa = PBXFileReference; path = "XKCD Reader-Info.plist"; sourceTree = "<group>"; };
+		49A4C60A1363C48D00515897 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		49A4C60C1363C48D00515897 /* XKCD Reader-Prefix.pch */ = {isa = PBXFileReference; path = "XKCD Reader-Prefix.pch"; sourceTree = "<group>"; };
+		49A4C60D1363C48D00515897 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		49A4C6101363C48D00515897 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = en; path = en.lproj/Credits.rtf; sourceTree = "<group>"; };
+		49A4C6121363C48D00515897 /* XKCD_ReaderAppDelegate.h */ = {isa = PBXFileReference; path = XKCD_ReaderAppDelegate.h; sourceTree = "<group>"; };
+		49A4C6131363C48D00515897 /* XKCD_ReaderAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XKCD_ReaderAppDelegate.m; sourceTree = "<group>"; };
+		49A4C6161363C48D00515897 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainMenu.xib; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		49A4C5F91363C48D00515897 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				49A4C6011363C48D00515897 /* Cocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		49A4C5F11363C48D00515897 = {
+			isa = PBXGroup;
+			children = (
+				49A4C6061363C48D00515897 /* XKCD Reader */,
+				49A4C5FF1363C48D00515897 /* Frameworks */,
+				49A4C5FD1363C48D00515897 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		49A4C5FD1363C48D00515897 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				49A4C5FC1363C48D00515897 /* XKCD Reader.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		49A4C5FF1363C48D00515897 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				49A4C6001363C48D00515897 /* Cocoa.framework */,
+				49A4C6021363C48D00515897 /* Other Frameworks */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		49A4C6021363C48D00515897 /* Other Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				49A4C6031363C48D00515897 /* AppKit.framework */,
+				49A4C6041363C48D00515897 /* CoreData.framework */,
+				49A4C6051363C48D00515897 /* Foundation.framework */,
+			);
+			name = "Other Frameworks";
+			sourceTree = "<group>";
+		};
+		49A4C6061363C48D00515897 /* XKCD Reader */ = {
+			isa = PBXGroup;
+			children = (
+				49A4C6121363C48D00515897 /* XKCD_ReaderAppDelegate.h */,
+				49A4C6131363C48D00515897 /* XKCD_ReaderAppDelegate.m */,
+				49A4C6151363C48D00515897 /* MainMenu.xib */,
+				49A4C6071363C48D00515897 /* Supporting Files */,
+			);
+			path = "XKCD Reader";
+			sourceTree = "<group>";
+		};
+		49A4C6071363C48D00515897 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				49A4C6081363C48D00515897 /* XKCD Reader-Info.plist */,
+				49A4C6091363C48D00515897 /* InfoPlist.strings */,
+				49A4C60C1363C48D00515897 /* XKCD Reader-Prefix.pch */,
+				49A4C60D1363C48D00515897 /* main.m */,
+				49A4C60F1363C48D00515897 /* Credits.rtf */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		49A4C5FB1363C48D00515897 /* XKCD Reader */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 49A4C61A1363C48D00515897 /* Build configuration list for PBXNativeTarget "XKCD Reader" */;
+			buildPhases = (
+				49A4C5F81363C48D00515897 /* Sources */,
+				49A4C5F91363C48D00515897 /* Frameworks */,
+				49A4C5FA1363C48D00515897 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "XKCD Reader";
+			productName = "XKCD Reader";
+			productReference = 49A4C5FC1363C48D00515897 /* XKCD Reader.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		49A4C5F31363C48D00515897 /* Project object */ = {
+			isa = PBXProject;
+			buildConfigurationList = 49A4C5F61363C48D00515897 /* Build configuration list for PBXProject "XKCD Reader" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 49A4C5F11363C48D00515897;
+			productRefGroup = 49A4C5FD1363C48D00515897 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				49A4C5FB1363C48D00515897 /* XKCD Reader */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		49A4C5FA1363C48D00515897 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				49A4C60B1363C48D00515897 /* InfoPlist.strings in Resources */,
+				49A4C6111363C48D00515897 /* Credits.rtf in Resources */,
+				49A4C6171363C48D00515897 /* MainMenu.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		49A4C5F81363C48D00515897 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				49A4C60E1363C48D00515897 /* main.m in Sources */,
+				49A4C6141363C48D00515897 /* XKCD_ReaderAppDelegate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		49A4C6091363C48D00515897 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				49A4C60A1363C48D00515897 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		49A4C60F1363C48D00515897 /* Credits.rtf */ = {
+			isa = PBXVariantGroup;
+			children = (
+				49A4C6101363C48D00515897 /* en */,
+			);
+			name = Credits.rtf;
+			sourceTree = "<group>";
+		};
+		49A4C6151363C48D00515897 /* MainMenu.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				49A4C6161363C48D00515897 /* en */,
+			);
+			name = MainMenu.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		49A4C6181363C48D00515897 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = DEBUG;
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.6;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		49A4C6191363C48D00515897 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.6;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		49A4C61B1363C48D00515897 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = NO;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "XKCD Reader/XKCD Reader-Prefix.pch";
+				INFOPLIST_FILE = "XKCD Reader/XKCD Reader-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		49A4C61C1363C48D00515897 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "XKCD Reader/XKCD Reader-Prefix.pch";
+				INFOPLIST_FILE = "XKCD Reader/XKCD Reader-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		49A4C5F61363C48D00515897 /* Build configuration list for PBXProject "XKCD Reader" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				49A4C6181363C48D00515897 /* Debug */,
+				49A4C6191363C48D00515897 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		49A4C61A1363C48D00515897 /* Build configuration list for PBXNativeTarget "XKCD Reader" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				49A4C61B1363C48D00515897 /* Debug */,
+				49A4C61C1363C48D00515897 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 49A4C5F31363C48D00515897 /* Project object */;
+}

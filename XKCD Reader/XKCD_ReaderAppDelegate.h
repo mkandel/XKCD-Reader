@@ -7,12 +7,23 @@
 //
 
 #import <Cocoa/Cocoa.h>
+#import <Quartz/Quartz.h>
+#import <stdlib.h>
+#import "XKCDScraper.h"
 
 @interface XKCD_ReaderAppDelegate : NSObject <NSApplicationDelegate> {
 @private
     NSWindow *window;
+    NSButton *randButton;
+    NSBrowser *xkcdBrowser;
+    IKImageView *xkcdImage;
+    XKCDScraper *scraper;
 }
+- (IBAction)showRandomImage:(id)sender;
 
 @property (assign) IBOutlet NSWindow *window;
+@property (assign) IBOutlet NSButton *randButton;
+@property (assign) IBOutlet NSBrowser *xkcdBrowser;
+@property (assign) IBOutlet IKImageView *xkcdImage;
 
 @end

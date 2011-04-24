@@ -7,28 +7,52 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		499E07E11364C4F50010E646 /* RegexKitLite.m in Sources */ = {isa = PBXBuildFile; fileRef = 499E07E01364C4F50010E646 /* RegexKitLite.m */; };
+		499E07E31364C5CF0010E646 /* libicucore.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 499E07E21364C5CF0010E646 /* libicucore.dylib */; };
 		49A4C6011363C48D00515897 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49A4C6001363C48D00515897 /* Cocoa.framework */; };
 		49A4C60B1363C48D00515897 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 49A4C6091363C48D00515897 /* InfoPlist.strings */; };
 		49A4C60E1363C48D00515897 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 49A4C60D1363C48D00515897 /* main.m */; };
 		49A4C6111363C48D00515897 /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 49A4C60F1363C48D00515897 /* Credits.rtf */; };
 		49A4C6141363C48D00515897 /* XKCD_ReaderAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 49A4C6131363C48D00515897 /* XKCD_ReaderAppDelegate.m */; };
 		49A4C6171363C48D00515897 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 49A4C6151363C48D00515897 /* MainMenu.xib */; };
+		49A4C61E1363C7B200515897 /* Quartz.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49A4C61D1363C7B200515897 /* Quartz.framework */; };
+		49A4C62B1363DD6300515897 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49A4C62A1363DD6300515897 /* WebKit.framework */; };
+		49A4C62E1363DF5400515897 /* xkcd.png in Resources */ = {isa = PBXBuildFile; fileRef = 49A4C62D1363DF5400515897 /* xkcd.png */; };
+		49A4C6311363E04500515897 /* XKCDScraper.m in Sources */ = {isa = PBXBuildFile; fileRef = 49A4C6301363E04500515897 /* XKCDScraper.m */; };
+		49C87E1D13642A75008575E0 /* HTMLNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 49C87E1A13642A75008575E0 /* HTMLNode.m */; };
+		49C87E1E13642A75008575E0 /* HTMLParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 49C87E1C13642A75008575E0 /* HTMLParser.m */; };
+		49C87E2013642AA7008575E0 /* README in Resources */ = {isa = PBXBuildFile; fileRef = 49C87E1F13642AA7008575E0 /* README */; };
+		49C87E2213642AF1008575E0 /* libxml2.2.7.3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 49C87E2113642AF1008575E0 /* libxml2.2.7.3.dylib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		499E07DF1364C4F50010E646 /* RegexKitLite.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegexKitLite.h; sourceTree = "<group>"; };
+		499E07E01364C4F50010E646 /* RegexKitLite.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegexKitLite.m; sourceTree = "<group>"; };
+		499E07E21364C5CF0010E646 /* libicucore.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libicucore.dylib; path = usr/lib/libicucore.dylib; sourceTree = SDKROOT; };
 		49A4C5FC1363C48D00515897 /* XKCD Reader.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "XKCD Reader.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		49A4C6001363C48D00515897 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		49A4C6031363C48D00515897 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
 		49A4C6041363C48D00515897 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		49A4C6051363C48D00515897 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
-		49A4C6081363C48D00515897 /* XKCD Reader-Info.plist */ = {isa = PBXFileReference; path = "XKCD Reader-Info.plist"; sourceTree = "<group>"; };
+		49A4C6081363C48D00515897 /* XKCD Reader-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "XKCD Reader-Info.plist"; sourceTree = "<group>"; };
 		49A4C60A1363C48D00515897 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		49A4C60C1363C48D00515897 /* XKCD Reader-Prefix.pch */ = {isa = PBXFileReference; path = "XKCD Reader-Prefix.pch"; sourceTree = "<group>"; };
+		49A4C60C1363C48D00515897 /* XKCD Reader-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "XKCD Reader-Prefix.pch"; sourceTree = "<group>"; };
 		49A4C60D1363C48D00515897 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		49A4C6101363C48D00515897 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = en; path = en.lproj/Credits.rtf; sourceTree = "<group>"; };
-		49A4C6121363C48D00515897 /* XKCD_ReaderAppDelegate.h */ = {isa = PBXFileReference; path = XKCD_ReaderAppDelegate.h; sourceTree = "<group>"; };
+		49A4C6121363C48D00515897 /* XKCD_ReaderAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XKCD_ReaderAppDelegate.h; sourceTree = "<group>"; };
 		49A4C6131363C48D00515897 /* XKCD_ReaderAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XKCD_ReaderAppDelegate.m; sourceTree = "<group>"; };
 		49A4C6161363C48D00515897 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		49A4C61D1363C7B200515897 /* Quartz.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Quartz.framework; path = System/Library/Frameworks/Quartz.framework; sourceTree = SDKROOT; };
+		49A4C62A1363DD6300515897 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
+		49A4C62D1363DF5400515897 /* xkcd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = xkcd.png; sourceTree = "<group>"; };
+		49A4C62F1363E04500515897 /* XKCDScraper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XKCDScraper.h; sourceTree = "<group>"; };
+		49A4C6301363E04500515897 /* XKCDScraper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XKCDScraper.m; sourceTree = "<group>"; };
+		49C87E1913642A75008575E0 /* HTMLNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTMLNode.h; sourceTree = "<group>"; };
+		49C87E1A13642A75008575E0 /* HTMLNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTMLNode.m; sourceTree = "<group>"; };
+		49C87E1B13642A75008575E0 /* HTMLParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTMLParser.h; sourceTree = "<group>"; };
+		49C87E1C13642A75008575E0 /* HTMLParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTMLParser.m; sourceTree = "<group>"; };
+		49C87E1F13642AA7008575E0 /* README */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README; sourceTree = "<group>"; };
+		49C87E2113642AF1008575E0 /* libxml2.2.7.3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.2.7.3.dylib; path = usr/lib/libxml2.2.7.3.dylib; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -36,6 +60,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				499E07E31364C5CF0010E646 /* libicucore.dylib in Frameworks */,
+				49C87E2213642AF1008575E0 /* libxml2.2.7.3.dylib in Frameworks */,
+				49A4C62B1363DD6300515897 /* WebKit.framework in Frameworks */,
+				49A4C61E1363C7B200515897 /* Quartz.framework in Frameworks */,
 				49A4C6011363C48D00515897 /* Cocoa.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -43,12 +71,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		499E07DE1364C4DC0010E646 /* RegexKit Lite */ = {
+			isa = PBXGroup;
+			children = (
+				499E07DF1364C4F50010E646 /* RegexKitLite.h */,
+				499E07E01364C4F50010E646 /* RegexKitLite.m */,
+			);
+			name = "RegexKit Lite";
+			sourceTree = "<group>";
+		};
 		49A4C5F11363C48D00515897 = {
 			isa = PBXGroup;
 			children = (
+				499E07DE1364C4DC0010E646 /* RegexKit Lite */,
+				49C87E1713642A50008575E0 /* HTML Parser */,
 				49A4C6061363C48D00515897 /* XKCD Reader */,
 				49A4C5FF1363C48D00515897 /* Frameworks */,
 				49A4C5FD1363C48D00515897 /* Products */,
+				49A4C61F1363CAC400515897 /* Resources */,
 			);
 			sourceTree = "<group>";
 		};
@@ -63,7 +103,11 @@
 		49A4C5FF1363C48D00515897 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				49A4C62A1363DD6300515897 /* WebKit.framework */,
 				49A4C6001363C48D00515897 /* Cocoa.framework */,
+				49A4C61D1363C7B200515897 /* Quartz.framework */,
+				49C87E2113642AF1008575E0 /* libxml2.2.7.3.dylib */,
+				499E07E21364C5CF0010E646 /* libicucore.dylib */,
 				49A4C6021363C48D00515897 /* Other Frameworks */,
 			);
 			name = Frameworks;
@@ -84,6 +128,8 @@
 			children = (
 				49A4C6121363C48D00515897 /* XKCD_ReaderAppDelegate.h */,
 				49A4C6131363C48D00515897 /* XKCD_ReaderAppDelegate.m */,
+				49A4C62F1363E04500515897 /* XKCDScraper.h */,
+				49A4C6301363E04500515897 /* XKCDScraper.m */,
 				49A4C6151363C48D00515897 /* MainMenu.xib */,
 				49A4C6071363C48D00515897 /* Supporting Files */,
 			);
@@ -100,6 +146,26 @@
 				49A4C60F1363C48D00515897 /* Credits.rtf */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		49A4C61F1363CAC400515897 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				49A4C62D1363DF5400515897 /* xkcd.png */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		49C87E1713642A50008575E0 /* HTML Parser */ = {
+			isa = PBXGroup;
+			children = (
+				49C87E1913642A75008575E0 /* HTMLNode.h */,
+				49C87E1A13642A75008575E0 /* HTMLNode.m */,
+				49C87E1B13642A75008575E0 /* HTMLParser.h */,
+				49C87E1C13642A75008575E0 /* HTMLParser.m */,
+				49C87E1F13642AA7008575E0 /* README */,
+			);
+			name = "HTML Parser";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -133,6 +199,7 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
+				English,
 			);
 			mainGroup = 49A4C5F11363C48D00515897;
 			productRefGroup = 49A4C5FD1363C48D00515897 /* Products */;
@@ -152,6 +219,8 @@
 				49A4C60B1363C48D00515897 /* InfoPlist.strings in Resources */,
 				49A4C6111363C48D00515897 /* Credits.rtf in Resources */,
 				49A4C6171363C48D00515897 /* MainMenu.xib in Resources */,
+				49A4C62E1363DF5400515897 /* xkcd.png in Resources */,
+				49C87E2013642AA7008575E0 /* README in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -164,6 +233,10 @@
 			files = (
 				49A4C60E1363C48D00515897 /* main.m in Sources */,
 				49A4C6141363C48D00515897 /* XKCD_ReaderAppDelegate.m in Sources */,
+				49A4C6311363E04500515897 /* XKCDScraper.m in Sources */,
+				49C87E1D13642A75008575E0 /* HTMLNode.m in Sources */,
+				49C87E1E13642A75008575E0 /* HTMLParser.m in Sources */,
+				499E07E11364C4F50010E646 /* RegexKitLite.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -234,10 +307,15 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				COPY_PHASE_STRIP = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(DEVELOPER_DIR)/Local/Frameworks\"",
+				);
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "XKCD Reader/XKCD Reader-Prefix.pch";
+				HEADER_SEARCH_PATHS = /usr/include/libxml2;
 				INFOPLIST_FILE = "XKCD Reader/XKCD Reader-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
@@ -250,9 +328,14 @@
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				COPY_PHASE_STRIP = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(DEVELOPER_DIR)/Local/Frameworks\"",
+				);
 				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "XKCD Reader/XKCD Reader-Prefix.pch";
+				HEADER_SEARCH_PATHS = /usr/include/libxml2;
 				INFOPLIST_FILE = "XKCD Reader/XKCD Reader-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
@@ -278,6 +361,7 @@
 				49A4C61C1363C48D00515897 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

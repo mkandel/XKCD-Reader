@@ -19,11 +19,13 @@
     NSImageView *xkcdImage;
     NSTableView *table;
     NSProgressIndicator *spinner;
+    NSButton *saveButton;
     NSMutableDictionary *dict;
     NSMutableArray *content;
     XKCDScraper *scraper;
 }
 - (IBAction)showRandomImage:(id)sender;
+- (IBAction)saveCurrent:(id)sender;
 
 - (void)tableView:(NSTableView *)tableView didClickTableColumn:(NSTableColumn *)tableColumn;
 - (void)tableViewSelectionDidChange:(NSNotification *)aNotification;
@@ -35,5 +37,6 @@
 @property (assign) IBOutlet NSImageView *xkcdImage;
 @property (assign) IBOutlet NSTableView *table;
 @property (assign) IBOutlet NSProgressIndicator *spinner;
+@property (assign) IBOutlet NSButton *saveButton;
 
 @end

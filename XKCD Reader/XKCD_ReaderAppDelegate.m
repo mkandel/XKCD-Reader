@@ -8,6 +8,7 @@
 
 #import "XKCD_ReaderAppDelegate.h"
 #import <stdlib.h>
+#include <time.h>
 
 #define MYDEBUG 0
 
@@ -18,6 +19,7 @@
 @synthesize xkcdImage;
 @synthesize table;
 @synthesize spinner;
+@synthesize saveButton;
 
 NSString *baseUrl = @"http://imgs.xkcd.com/comics/";
 NSString *file    = @"turtles.png";
@@ -50,6 +52,7 @@ bool doAlert = true;
     [spinner setStyle:NSProgressIndicatorSpinningStyle];
     [spinner setHidden:FALSE];
     [spinner display];
+//    [spinner startAnimation:nil];
     
     NSLog(@"Got '%lu' image links ...", [content count]);
 
@@ -67,10 +70,18 @@ bool doAlert = true;
     return YES;
 }
 
+- (IBAction)saveCurrent:(id)sender{
+    NSLog(@"Save button pressed ...");
+    [[NSAlert alertWithMessageText:@"Save Button Pressed" defaultButton:@"OK" alternateButton:nil otherButton:nil informativeTextWithFormat:@"Save not implemented, sorry!!"] runModal];
+    
+}
+
 - (IBAction)showRandomImage:(id)sender {
     NSLog(@"Random button pressed ...");
 
     // Do something fun
+    [spinner startAnimation:nil];
+    srand((unsigned)time(NULL));
     int random_elem = rand() % ( (int)[content count] - 1 );
     NSLog(@"Random element: '%d'",random_elem);
     
@@ -85,15 +96,12 @@ bool doAlert = true;
     
     NSImage *xkcd_image = [[[NSImage alloc] initWithContentsOfURL:image_url] autorelease];
     [xkcdImage setImage:xkcd_image];
+    [spinner stopAnimation:nil];
     
-//    NSString *random_comic = [content objectAtIndex:random_elem];
-//    NSLog(@"Random comic  : '%@'",random_comic);
-//    NSString *image_url = [scraper get_image:[dict objectForKey:random_comic]];
-//    NSLog(@"Image URL     : '%@'",image_url);
-//    NSURL *random_url = [[[NSURL alloc] initWithString:image_url] autorelease];
-//    NSImage *random_image = [[[NSImage alloc] initWithContentsOfURL:random_url] autorelease];
-//    [xkcdImage setImage:random_image];
-
+    // Select and focus on the randomly selected item
+//    NSCell *cell = [table preparedCellAtColumn:0 row:random_elem];
+//    [table shouldFocusCell:cell atColumn:0 row:random_elem];
+    
 //    [[NSAlert alertWithMessageText:@"Random Button Pressed" defaultButton:@"OK" alternateButton:nil otherButton:nil informativeTextWithFormat:@"Hey, don't push that!!"] runModal];
 }
 
@@ -144,6 +152,7 @@ bool doAlert = true;
         }
         
         // Do something fun
+        [spinner startAnimation:nil];
         NSString *comic_str = [content objectAtIndex:rowIndex];
         
         NSURL *comic_url = [dict objectForKey:comic_str];
@@ -155,6 +164,7 @@ bool doAlert = true;
         NSImage *xkcd_image = [[[NSImage alloc] initWithContentsOfURL:image] autorelease];
         [xkcdImage setImage:xkcd_image];
         
+        [spinner stopAnimation:nil];
         //[xkcdImage setImageWithURL:image];
     }
     NSLog(@"** Exiting : tableViewSelectionDidChange **");

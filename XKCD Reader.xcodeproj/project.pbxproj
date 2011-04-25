@@ -21,7 +21,6 @@
 		49A4C6311363E04500515897 /* XKCDScraper.m in Sources */ = {isa = PBXBuildFile; fileRef = 49A4C6301363E04500515897 /* XKCDScraper.m */; };
 		49C87E1D13642A75008575E0 /* HTMLNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 49C87E1A13642A75008575E0 /* HTMLNode.m */; };
 		49C87E1E13642A75008575E0 /* HTMLParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 49C87E1C13642A75008575E0 /* HTMLParser.m */; };
-		49C87E2013642AA7008575E0 /* README in Resources */ = {isa = PBXBuildFile; fileRef = 49C87E1F13642AA7008575E0 /* README */; };
 		49C87E2213642AF1008575E0 /* libxml2.2.7.3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 49C87E2113642AF1008575E0 /* libxml2.2.7.3.dylib */; };
 /* End PBXBuildFile section */
 
@@ -220,7 +219,6 @@
 				49A4C6111363C48D00515897 /* Credits.rtf in Resources */,
 				49A4C6171363C48D00515897 /* MainMenu.xib in Resources */,
 				49A4C62E1363DF5400515897 /* xkcd.png in Resources */,
-				49C87E2013642AA7008575E0 /* README in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -307,6 +305,7 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 0.0.1;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(DEVELOPER_DIR)/Local/Frameworks\"",
@@ -318,6 +317,9 @@
 				HEADER_SEARCH_PATHS = /usr/include/libxml2;
 				INFOPLIST_FILE = "XKCD Reader/XKCD Reader-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				RUN_CLANG_STATIC_ANALYZER = YES;
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -327,6 +329,7 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				COPY_PHASE_STRIP = YES;
+				CURRENT_PROJECT_VERSION = 0.0.1;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -337,7 +340,11 @@
 				GCC_PREFIX_HEADER = "XKCD Reader/XKCD Reader-Prefix.pch";
 				HEADER_SEARCH_PATHS = /usr/include/libxml2;
 				INFOPLIST_FILE = "XKCD Reader/XKCD Reader-Info.plist";
+				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				RUN_CLANG_STATIC_ANALYZER = YES;
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

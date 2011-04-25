@@ -11,6 +11,7 @@
 //#import <RegexKit/RegexKit.h>
 #import "RegexKitLite.h"
 
+#define MYDEBUG 0
 
 @implementation XKCDScraper
 @synthesize webView;
@@ -37,8 +38,7 @@
     //NSString *retVal = [[[NSString alloc] initWithURL:url] autorelease];
     //NSString *retVal = [NSString stringWithContentsOfURL:url encoding:NSStringEncodingConversionExternalRepresentation error:err];
     //NSLog(@"%@", retVal);
-    NSArray *retVal = [[NSArray alloc] init];
-    [retVal autorelease];
+    NSArray *retVal = [[[NSArray alloc] init] autorelease];
     
     NSDictionary * myerror = nil;
     //NSError * myerror = nil;
@@ -55,55 +55,27 @@
     NSArray * inputNodes = [bodyNode findChildTags:@"a"];
     NSLog(@"There are '%lu' a nodes", [inputNodes count]);
 
+    // Counters ... duh ...
     int total_count = 0;
     int good_count  = 0;
+    
     for (HTMLNode * inputNode in inputNodes) {
         total_count++;
-        NSLog( @"total: %d", total_count);
         
-        /*
-         
-        What I think I need to do here is:
-            create a scanner
-            scan the raw satring for 'title'
-            ignore non-'title' lines
-
-        Nah ... what I need is Perl (or PCRE) RegExes damnit!!
-            So ... I've downloaded the RegexKit Framework and will try that!!
-
-         Commenting out a shitload of crap ...
-         
-        */
-//        NSString *identifier = @"title";
-//        NSString *foundText;
-//        NSScanner *scanner = [NSScanner scannerWithString:@"title"];
-//        [scanner scanString:@"title" intoString:&foundText];
-//        //[[NSAlert alertWithMessageText:@"Random Button Pressed" defaultButton:@"OK" alternateButton:nil otherButton:nil informativeTextWithFormat:@"Help!"] runModal];        
-//        NSLog(@"*** '%@' ***", foundText);
-//        if ( !foundText ) {
-//            continue;
-//        }
-//        retVal = [retVal arrayByAddingObject:foundText];
+        if (MYDEBUG) {
+            NSLog( @"total: %d", total_count);
+        }
         
-        /*
-         
-         OK, now that I have RegexKit (and I theoretically have Perl-ish Regexen) let's see what kinda magic I can muster
-         
-         :-)
-         
-         */
+        if (MYDEBUG){
+            NSString *title = [[[NSString alloc]initWithFormat:@"%@",[inputNode allContents]] autorelease];
+            NSString *raw = [[[NSString alloc]initWithFormat:@"%@",[inputNode rawContents]] autorelease];
+            NSLog( @"value: '%@'", title );
+            NSLog( @"  raw: '%@'", raw );
+            NSLog( @"class: %@", [inputNode className]);
+            NSLog (@"  tag: %@", [inputNode tagName]);
+            NSLog( @" good: %d", good_count );
+        }
         
-        NSString *title = [[[NSString alloc]initWithFormat:@"%@",[inputNode allContents]] autorelease];
-        NSString *raw = [[[NSString alloc]initWithFormat:@"%@",[inputNode rawContents]] autorelease];
-        
-        
-        
-        NSLog( @"value: '%@'", title );
-        NSLog( @"  raw: '%@'", raw );
-        NSLog( @"class: %@", [inputNode className]);
-        NSLog (@"  tag: %@", [inputNode tagName]);
-        NSLog( @" good: %d", good_count );
-
         // Testing, only process first 25 lines:
         if ( total_count > 25 ) break;
     }

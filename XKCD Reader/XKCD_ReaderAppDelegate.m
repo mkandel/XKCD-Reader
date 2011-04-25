@@ -20,18 +20,12 @@ NSString *file    = @"turtles.png";
 bool doAlert = true;
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification
-{
-    // Insert code here to initialize your application
+{    
+    // Load the header logo as the default image
+    NSURL *url = [[[NSURL alloc] initWithString:@"http://imgs.xkcd.com/s/9be30a7.png"] autorelease];
+
     [xkcdImage setAutoresizes:TRUE];
-    NSURL *url = [[NSURL alloc] initWithString:@"http://imgs.xkcd.com/s/9be30a7.png"];
-//    NSURL *testUrl = [[NSURL alloc] initWithString:[baseUrl stringByAppendingString:file]];
-//    NSString *testUrl = [baseUrl stringByAppendingString:file];
     [xkcdImage setImageWithURL:url];
-    [url release];
-//    [testUrl release];
-    
-    scraper = [[XKCDScraper alloc] init];
-//    [content release];
 }
 
 - (void)applicationDidUpdate:(NSNotification *)aNotification{
@@ -46,6 +40,7 @@ bool doAlert = true;
 - (IBAction)showRandomImage:(id)sender {
     NSLog(@"Random button pressed ...");
     
+    XKCDScraper *scraper = [[[XKCDScraper alloc] init] autorelease];
     NSArray *content = [scraper getImageLinks];
     
     NSLog(@"Got '%lu' image links ...\n\n", [content count]);

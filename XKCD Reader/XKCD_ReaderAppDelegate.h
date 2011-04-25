@@ -17,7 +17,6 @@
     NSButton *randButton;
     NSBrowser *xkcdBrowser;
     IKImageView *xkcdImage;
-    XKCDScraper *scraper;
 }
 - (IBAction)showRandomImage:(id)sender;
 

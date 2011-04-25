@@ -45,10 +45,14 @@ NSURL *get_image_url( NSString * );
     return retVal;
 }
 
+- (NSMutableDictionary *)getImageDict{
+    return get_data();
+}
+
 NSMutableDictionary * get_data(){
     
     if ( MYDEBUG ){
-        NSLog(@"Entered get_data()");
+        NSLog( @"Entered get_data()" );
     }
     // My return object
     NSMutableDictionary *ret = [[NSMutableDictionary alloc] init];
@@ -122,14 +126,14 @@ NSMutableDictionary * get_data(){
         if( dir && name ){
             good_count++;
             if ( MYDEBUG ){
-                NSLog( @"  raw: '%@'", raw);
-                NSLog( @" name: '%@'", name);
-                NSLog (@"  dir: '%d'", dir);
-                //NSLog( @" good: %d", good_count);
+                NSLog( @"  raw: '%@'", raw );
+                NSLog( @" name: '%@'", name );
+                NSLog (@"  dir: '%d'", dir );
+                //NSLog( @" good: %d", good_count );
             }
             
             //Create the image URL
-            NSURL *img_url = get_image_url(dir_str);
+            NSURL *img_url = get_image_url( dir_str );
             
             // Add stuff the name and URL into the Dictionary for return:
             [ret setObject:img_url forKey:name];
@@ -140,12 +144,12 @@ NSMutableDictionary * get_data(){
     }
     
     if ( MYDEBUG ){
-        NSLog(@"Total:'%d'", total_count);
-        NSLog(@" Good:'%d'", good_count);
+        NSLog( @"Total:'%d'", total_count );
+        NSLog( @" Good:'%d'", good_count );
     }
     
     if ( MYDEBUG ){
-        NSLog(@"Exiting get_data()");
+        NSLog( @"Exiting get_data()" );
     }
     
     return ret;
@@ -153,7 +157,7 @@ NSMutableDictionary * get_data(){
 
 NSURL * get_image_url( NSString *comic_url_str ){
     if ( MYDEBUG ){
-        NSLog(@"Entered get_image_url()");
+        NSLog( @"Entered get_image_url()" );
     }
     
     // My return object
@@ -167,7 +171,7 @@ NSURL * get_image_url( NSString *comic_url_str ){
     
     
     if ( MYDEBUG ){
-        NSLog(@"Exiting get_image_url()");
+        NSLog( @"Exiting get_image_url()" );
     }
     
     return ret;

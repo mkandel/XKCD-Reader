@@ -17,6 +17,8 @@
     NSButton *randButton;
     NSImageView *xkcdImage;
     NSTableView *table;
+    NSMutableDictionary *dict;
+    NSMutableArray *content;
 }
 - (IBAction)showRandomImage:(id)sender;
 

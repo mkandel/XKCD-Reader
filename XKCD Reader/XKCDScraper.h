@@ -16,4 +16,5 @@
 }
 @property (retain) WebView *webView;
 - (NSArray *)getImageLinks;
+- (NSMutableDictionary *)getImageDict;
 @end

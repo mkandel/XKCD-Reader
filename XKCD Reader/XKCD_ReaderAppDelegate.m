@@ -8,6 +8,8 @@
 
 #import "XKCD_ReaderAppDelegate.h"
 
+#define MYDEBUG 0
+
 @implementation XKCD_ReaderAppDelegate
 
 @synthesize window;
@@ -37,9 +39,9 @@ bool doAlert = true;
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification{    
     // Load the header logo as the default image
     NSURL *logo_url = [[[NSURL alloc] initWithString:@"http://imgs.xkcd.com/s/9be30a7.png"] autorelease];
-    //NSData *logo_image_data = [[[NSData alloc] initWithContentsOfURL:logo_url] autorelease];
-    NSImage *logo_image = [[[NSImage alloc] initWithContentsOfURL:logo_url] autorelease];
-    [xkcdImage setImage:logo_image];
+    [xkcdImage setAutoresizes:TRUE];
+    [xkcdImage setImageWithURL:logo_url];
+
     [spinner setStyle:NSProgressIndicatorSpinningStyle];
     [spinner setHidden:FALSE];
     [spinner display];
@@ -100,7 +102,7 @@ bool doAlert = true;
 }
 - (void)tableViewSelectionDidChange:(NSNotification *)notification{
     //NSLog(@"tableViewSelectionDidChange: '%@'",notification);
-    NSLog(@"tableViewSelectionDidChange");
+    NSLog(@"** Entering: tableViewSelectionDidChange **");
     NSInteger rowIndex;
     NSURL *image = [[[NSURL alloc] init] autorelease];
     
@@ -108,17 +110,22 @@ bool doAlert = true;
     rowIndex = [(NSTableView *)[notification object] selectedRow];
     if (rowIndex >= 0)
     {
-        NSLog(@"Selected row '%ld'", rowIndex);
+        if ( MYDEBUG ){
+            NSLog(@"Selected row '%ld'", rowIndex);
+        }
+        
         // Do something fun
         NSString *comic_str = [content objectAtIndex:rowIndex];
+        
         NSURL *comic_url = [dict objectForKey:comic_str];
-        NSLog(@"      URL: '%@'",comic_url);
+        NSLog(@"Comic URL: '%@'",comic_url);
+        
         image = [scraper get_image:comic_url];
         NSLog(@"Image URL: '%@'",image);
-        NSData *image_data = [[[NSData alloc] initWithContentsOfURL:image] autorelease];
-        NSImage *xkcd_image = [[[NSImage alloc] initWithData:image_data] autorelease];
-        [xkcdImage setImage:xkcd_image];
+
+        [xkcdImage setImageWithURL:image];
     }
+    NSLog(@"** Exiting : tableViewSelectionDidChange **");
 }
 
 - (void)tableView:(NSTableView *)tableView willDisplayCell:(id)cell forTableColumn:(NSTableColumn *)tableColumn row:(NSInteger)row {    

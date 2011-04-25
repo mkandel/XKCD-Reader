@@ -17,14 +17,18 @@
     NSButton *randButton;
     NSImageView *xkcdImage;
     NSTableView *table;
+    NSProgressIndicator *spinner;
     NSMutableDictionary *dict;
     NSMutableArray *content;
 }
 - (IBAction)showRandomImage:(id)sender;
 
+
+
 @property (assign) IBOutlet NSWindow *window;
 @property (assign) IBOutlet NSButton *randButton;
 @property (assign) IBOutlet NSImageView *xkcdImage;
 @property (assign) IBOutlet NSTableView *table;
+@property (assign) IBOutlet NSProgressIndicator *spinner;
 
 @end

@@ -39,7 +39,7 @@
 		49A4C60C1363C48D00515897 /* XKCD Reader-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "XKCD Reader-Prefix.pch"; sourceTree = "<group>"; };
 		49A4C60D1363C48D00515897 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		49A4C6101363C48D00515897 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = en; path = en.lproj/Credits.rtf; sourceTree = "<group>"; };
-		49A4C6121363C48D00515897 /* XKCD_ReaderAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XKCD_ReaderAppDelegate.h; sourceTree = "<group>"; };
+		49A4C6121363C48D00515897 /* XKCD_ReaderAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = XKCD_ReaderAppDelegate.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
 		49A4C6131363C48D00515897 /* XKCD_ReaderAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XKCD_ReaderAppDelegate.m; sourceTree = "<group>"; };
 		49A4C6161363C48D00515897 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		49A4C61D1363C7B200515897 /* Quartz.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Quartz.framework; path = System/Library/Frameworks/Quartz.framework; sourceTree = SDKROOT; };

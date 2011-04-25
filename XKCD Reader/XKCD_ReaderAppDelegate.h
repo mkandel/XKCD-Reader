@@ -20,10 +20,13 @@
     NSProgressIndicator *spinner;
     NSMutableDictionary *dict;
     NSMutableArray *content;
+    XKCDScraper *scraper;
 }
 - (IBAction)showRandomImage:(id)sender;
 
-
+- (void)tableView:(NSTableView *)tableView didClickTableColumn:(NSTableColumn *)tableColumn;
+- (void)tableViewSelectionDidChange:(NSNotification *)aNotification;
+- (void)tableSelectionChanged:(id)notification;
 
 @property (assign) IBOutlet NSWindow *window;
 @property (assign) IBOutlet NSButton *randButton;

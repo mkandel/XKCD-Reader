@@ -17,4 +17,5 @@
 @property (retain) WebView *webView;
 - (NSArray *)getImageLinks;
 - (NSMutableDictionary *)getImageDict;
+- (NSURL *)get_image:(NSURL *)comic_url;
 @end

@@ -49,6 +49,44 @@ NSURL *get_image_url( NSString * );
     return get_data();
 }
 
+- (NSURL *)get_image:(NSURL *) comic_url{
+    NSURL *ret = NULL;
+
+    NSError *myerror = NULL;
+    NSString *comic_html = [[[NSString alloc] initWithContentsOfURL:comic_url encoding:NSStringEncodingConversionExternalRepresentation error:&myerror] autorelease];
+    
+    // process HTML
+    HTMLParser *parser = [[[HTMLParser alloc] initWithString:comic_html error:&myerror] autorelease];
+    if (myerror) {
+        NSLog(@"Error: %@", myerror);
+        exit(1);
+    }
+    HTMLNode * bodyNode = [parser body];
+//    NSLog(@"Node: '%@'", [bodyNode rawContents]);
+    
+    // Grab all of the 'img' nodes
+    NSArray * inputNodes = [bodyNode findChildTags:@"img"];
+    
+    for( HTMLNode *node in inputNodes ){
+        NSString *raw = [node rawContents];
+        if ( MYDEBUG ){
+            NSLog(@"** raw: '%@'", raw);
+        }
+        // <img src="http://imgs.xkcd.com/comics/automatic_doors.png" title="I hope no automatic doors I know read this.  I would be so embarrassed." alt="Automatic Doors">
+//        NSString *regex_str = @"<img src=\"(.*)\" title=\".*\" alt=\".*\">";
+        NSString *regex_str = @"<img src=\"(.*)\" title=.*>";
+        NSString *image_url_str = [raw stringByMatching:regex_str capture:1L];
+        if( image_url_str ){
+            if ( MYDEBUG ){
+                NSLog(@"url: '%@'", image_url_str);
+            }
+            ret = [[[NSURL alloc] initWithString:image_url_str] autorelease];
+        }
+    }
+    
+    return ret;
+}
+
 NSMutableDictionary * get_data(){
     
     if ( MYDEBUG ){

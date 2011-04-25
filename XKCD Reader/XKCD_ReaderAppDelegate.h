@@ -15,7 +15,8 @@
 @private
     NSWindow *window;
     NSButton *randButton;
-    IKImageView *xkcdImage;
+    //IKImageView *xkcdImage;
+    NSImageView *xkcdImage;
     NSTableView *table;
     NSProgressIndicator *spinner;
     NSMutableDictionary *dict;
@@ -30,7 +31,8 @@
 
 @property (assign) IBOutlet NSWindow *window;
 @property (assign) IBOutlet NSButton *randButton;
-@property (assign) IBOutlet IKImageView *xkcdImage;
+//@property (assign) IBOutlet IKImageView *xkcdImage;
+@property (assign) IBOutlet NSImageView *xkcdImage;
 @property (assign) IBOutlet NSTableView *table;
 @property (assign) IBOutlet NSProgressIndicator *spinner;
 

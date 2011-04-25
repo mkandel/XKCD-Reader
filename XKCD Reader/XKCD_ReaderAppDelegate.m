@@ -7,6 +7,7 @@
 //
 
 #import "XKCD_ReaderAppDelegate.h"
+#import <stdlib.h>
 
 #define MYDEBUG 0
 
@@ -39,8 +40,12 @@ bool doAlert = true;
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification{    
     // Load the header logo as the default image
     NSURL *logo_url = [[[NSURL alloc] initWithString:@"http://imgs.xkcd.com/s/9be30a7.png"] autorelease];
-    [xkcdImage setAutoresizes:TRUE];
-    [xkcdImage setImageWithURL:logo_url];
+    
+    NSImage *logo_image = [[[NSImage alloc] initWithContentsOfURL:logo_url] autorelease];
+    [xkcdImage setImage:logo_image];
+    
+//    [xkcdImage setAutoresizes:TRUE];
+//    [xkcdImage setImageWithURL:logo_url];
 
     [spinner setStyle:NSProgressIndicatorSpinningStyle];
     [spinner setHidden:FALSE];
@@ -64,6 +69,30 @@ bool doAlert = true;
 
 - (IBAction)showRandomImage:(id)sender {
     NSLog(@"Random button pressed ...");
+
+    // Do something fun
+    int random_elem = rand() % ( (int)[content count] - 1 );
+    NSLog(@"Random element: '%d'",random_elem);
+    
+    NSString *comic_str = [content objectAtIndex:random_elem];
+    
+    NSURL *comic_url = [dict objectForKey:comic_str];
+    NSLog(@"Comic URL: '%@'",comic_url);
+
+
+    NSURL *image_url = [scraper get_image:comic_url];
+    NSLog(@"Image URL: '%@'",image_url);
+    
+    NSImage *xkcd_image = [[[NSImage alloc] initWithContentsOfURL:image_url] autorelease];
+    [xkcdImage setImage:xkcd_image];
+    
+//    NSString *random_comic = [content objectAtIndex:random_elem];
+//    NSLog(@"Random comic  : '%@'",random_comic);
+//    NSString *image_url = [scraper get_image:[dict objectForKey:random_comic]];
+//    NSLog(@"Image URL     : '%@'",image_url);
+//    NSURL *random_url = [[[NSURL alloc] initWithString:image_url] autorelease];
+//    NSImage *random_image = [[[NSImage alloc] initWithContentsOfURL:random_url] autorelease];
+//    [xkcdImage setImage:random_image];
 
 //    [[NSAlert alertWithMessageText:@"Random Button Pressed" defaultButton:@"OK" alternateButton:nil otherButton:nil informativeTextWithFormat:@"Hey, don't push that!!"] runModal];
 }
@@ -104,7 +133,7 @@ bool doAlert = true;
     //NSLog(@"tableViewSelectionDidChange: '%@'",notification);
     NSLog(@"** Entering: tableViewSelectionDidChange **");
     NSInteger rowIndex;
-    NSURL *image = [[[NSURL alloc] init] autorelease];
+    NSURL *image = NULL;
     
     // What was selected. Skip out if the row has not changed.
     rowIndex = [(NSTableView *)[notification object] selectedRow];
@@ -123,7 +152,10 @@ bool doAlert = true;
         image = [scraper get_image:comic_url];
         NSLog(@"Image URL: '%@'",image);
 
-        [xkcdImage setImageWithURL:image];
+        NSImage *xkcd_image = [[[NSImage alloc] initWithContentsOfURL:image] autorelease];
+        [xkcdImage setImage:xkcd_image];
+        
+        //[xkcdImage setImageWithURL:image];
     }
     NSLog(@"** Exiting : tableViewSelectionDidChange **");
 }

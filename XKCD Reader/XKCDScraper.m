@@ -46,6 +46,18 @@ NSURL *get_image_url( NSString * );
 }
 
 - (NSMutableDictionary *)getImageDict{
+//    NSMutableDictionary *ret;
+//    NSMutableDictionary *tmp;
+//    
+//    tmp = get_data();
+//    
+//    NSMutableArray *keys = [NSMutableArray arrayWithArray:[tmp allKeys] ];
+//    for ( NSString *comic_name in keys ){
+//        NSURL *comic_url = 
+//    }
+//    
+//    return ret;
+
     return get_data();
 }
 

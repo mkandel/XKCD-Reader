@@ -15,14 +15,14 @@
 @private
     NSWindow *window;
     NSButton *randButton;
-    NSBrowser *xkcdBrowser;
-    IKImageView *xkcdImage;
+    NSImageView *xkcdImage;
+    NSTableView *table;
 }
 - (IBAction)showRandomImage:(id)sender;
 
 @property (assign) IBOutlet NSWindow *window;
 @property (assign) IBOutlet NSButton *randButton;
-@property (assign) IBOutlet NSBrowser *xkcdBrowser;
-@property (assign) IBOutlet IKImageView *xkcdImage;
+@property (assign) IBOutlet NSImageView *xkcdImage;
+@property (assign) IBOutlet NSTableView *table;
 
 @end

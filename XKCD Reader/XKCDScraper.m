@@ -98,6 +98,8 @@ NSMutableDictionary * get_data(){
          </a>
          /x
          
+         Simple Perl RegEx
+         
          <a href="/(\d+)/" title=".*">(.*)</a>
          
          In Perl I'd make a hash as the next lines:
@@ -106,6 +108,8 @@ NSMutableDictionary * get_data(){
          $dir_for_title{ $2 } = $1;
          
          Maybe I can use an NSDictionary as a hash?
+         
+         I can!!  Woo hoo!!
          
          */
         
@@ -124,22 +128,12 @@ NSMutableDictionary * get_data(){
                 //NSLog( @" good: %d", good_count);
             }
             
+            //Create the image URL
             NSURL *img_url = get_image_url(dir_str);
-            // Add stuff to the Dictionary for return:
+            
+            // Add stuff the name and URL into the Dictionary for return:
             [ret setObject:img_url forKey:name];
-            //[ret setObject:name forKey:get_image_url(dir_str)];
-            
-            //|- This didn't work ...
-            //V
-            //[ret setValue:dir_str forKey:name];
-            
-            //|- But this did ...
-            //V
-            //[ret setValue:name forKey:dir_str];
-            
-            // weird ...
         }
-        
         
         // Testing, only process first 25 lines:
         //if ( total_count > 25 ) break;

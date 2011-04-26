@@ -54,10 +54,14 @@ bool doAlert = true;
     [spinner display];
 //    [spinner startAnimation:nil];
     
-    NSLog(@"Got '%lu' image links ...", [content count]);
-
+    if ( MYDEBUG ){
+        NSLog(@"Got '%lu' image links ...", [content count]);
+    }
+    
     [table reloadData];
-    NSLog(@"Table has '%lu' entries",[table numberOfRows]);
+    if ( MYDEBUG ){
+        NSLog(@"Table has '%lu' entries",[table numberOfRows]);
+    }
 }
 
 - (void)dealloc
@@ -71,28 +75,36 @@ bool doAlert = true;
 }
 
 - (IBAction)saveCurrent:(id)sender{
-    NSLog(@"Save button pressed ...");
+    
+    if ( MYDEBUG ){
+        NSLog(@"Save button pressed ...");
+    }
+    
     [[NSAlert alertWithMessageText:@"Save Button Pressed" defaultButton:@"OK" alternateButton:nil otherButton:nil informativeTextWithFormat:@"Save not implemented, sorry!!"] runModal];
     
 }
 
 - (IBAction)showRandomImage:(id)sender {
-    NSLog(@"Random button pressed ...");
-
+    
+    if ( MYDEBUG ){    
+        NSLog(@"Random button pressed ...");
+    }
+    
     // Do something fun
     [spinner startAnimation:nil];
     srand((unsigned)time(NULL));
     int random_elem = rand() % ( (int)[content count] - 1 );
-    NSLog(@"Random element: '%d'",random_elem);
     
     NSString *comic_str = [content objectAtIndex:random_elem];
     
     NSURL *comic_url = [dict objectForKey:comic_str];
-    NSLog(@"Comic URL: '%@'",comic_url);
-
-
     NSURL *image_url = [scraper get_image:comic_url];
-    NSLog(@"Image URL: '%@'",image_url);
+        
+    if ( MYDEBUG ){
+        NSLog(@"Random element: '%d'",random_elem);
+        NSLog(@"Comic URL: '%@'",comic_url);
+        NSLog(@"Image URL: '%@'",image_url);
+    }
     
     NSImage *xkcd_image = [[[NSImage alloc] initWithContentsOfURL:image_url] autorelease];
     [xkcdImage setImage:xkcd_image];
@@ -114,8 +126,6 @@ bool doAlert = true;
 
 - (id)tableView:(NSTableView *)tableView objectValueForTableColumn:(NSTableColumn *)tableColumn row:(NSInteger)row {
     
-    //NSLog(@"Row: '%ul'",row);
-   
     NSParameterAssert(row >= 0 && row < [content count]);
     
     NSString *row_obj = [content objectAtIndex:row];
@@ -124,22 +134,12 @@ bool doAlert = true;
     return ret;
 }
 
-- (void)tableSelectionChanged:(id)notification
-{
-    NSLog(@"tableSelectionChanged: '%@'",notification);
-//
-//    NSLog(@"tableSelectionChanged");
-//	[ self resetSentence ];
-}
-
-
-- (void)tableView:(NSTableView *)tableView didClickTableColumn:(NSTableColumn *)tableColumn{
-    NSLog(@"didClickTableColumn: '%@'",tableColumn);
-    
-}
 - (void)tableViewSelectionDidChange:(NSNotification *)notification{
-    //NSLog(@"tableViewSelectionDidChange: '%@'",notification);
-    NSLog(@"** Entering: tableViewSelectionDidChange **");
+    
+    if ( MYDEBUG ){
+        NSLog(@"** Entering: tableViewSelectionDidChange **");
+    }
+            
     NSInteger rowIndex;
     NSURL *image = NULL;
     
@@ -156,22 +156,24 @@ bool doAlert = true;
         NSString *comic_str = [content objectAtIndex:rowIndex];
         
         NSURL *comic_url = [dict objectForKey:comic_str];
-        NSLog(@"Comic URL: '%@'",comic_url);
         
         image = [scraper get_image:comic_url];
-        NSLog(@"Image URL: '%@'",image);
-
+        
+        if ( MYDEBUG ){    
+            NSLog(@"Comic URL: '%@'",comic_url);
+            NSLog(@"Image URL: '%@'",image);
+        }
+        
         NSImage *xkcd_image = [[[NSImage alloc] initWithContentsOfURL:image] autorelease];
         [xkcdImage setImage:xkcd_image];
         
         [spinner stopAnimation:nil];
         //[xkcdImage setImageWithURL:image];
     }
-    NSLog(@"** Exiting : tableViewSelectionDidChange **");
-}
-
-- (void)tableView:(NSTableView *)tableView willDisplayCell:(id)cell forTableColumn:(NSTableColumn *)tableColumn row:(NSInteger)row {    
-    //NSLog(@"willDisplayCell: Row: '%lu'",row);
+    
+    if ( MYDEBUG ){
+        NSLog(@"** Exiting : tableViewSelectionDidChange **");
+    }
 }
 
 @end

@@ -29,14 +29,16 @@ bool doAlert = true;
     scraper = [[XKCDScraper alloc] init];
     dict = [scraper getImageDict];
     content = [NSMutableArray new];
-//    [content setArray:[dict keysSortedByValueUsingSelector:@selector(caseInsensitiveCompare:)]];
     
     // Careful with this crap ...
+    // Trying to sort them:
+    //[content setArray:[dict keysSortedByValueUsingSelector:@selector(caseInsensitiveCompare:)]];    
     int i = 0;
     for ( NSString *key in [dict allKeys] ){
             [content insertObject:key atIndex:i];
         i++;
     } 
+    // end Careful with this crap ...
 }
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification{    
@@ -46,13 +48,9 @@ bool doAlert = true;
     NSImage *logo_image = [[[NSImage alloc] initWithContentsOfURL:logo_url] autorelease];
     [xkcdImage setImage:logo_image];
     
-//    [xkcdImage setAutoresizes:TRUE];
-//    [xkcdImage setImageWithURL:logo_url];
-
     [spinner setStyle:NSProgressIndicatorSpinningStyle];
     [spinner setHidden:FALSE];
     [spinner display];
-//    [spinner startAnimation:nil];
     
     if ( MYDEBUG ){
         NSLog(@"Got '%lu' image links ...", [content count]);
@@ -64,13 +62,13 @@ bool doAlert = true;
     }
 }
 
-- (void)dealloc
-{
+- (void)dealloc{
     [scraper release];
+    [dict release];
+    [content release];
 }
 
--(BOOL) applicationShouldTerminateAfterLastWindowClosed:(NSApplication *)theApplication
-{
+-(BOOL) applicationShouldTerminateAfterLastWindowClosed:(NSApplication *)theApplication{
     return YES;
 }
 
@@ -111,16 +109,15 @@ bool doAlert = true;
     [spinner stopAnimation:nil];
     
     // Select and focus on the randomly selected item
-//    NSCell *cell = [table preparedCellAtColumn:0 row:random_elem];
-//    [table shouldFocusCell:cell atColumn:0 row:random_elem];
+//    [table shouldFocusCell:nil atColumn:0 row:random_elem];
     
-//    [[NSAlert alertWithMessageText:@"Random Button Pressed" defaultButton:@"OK" alternateButton:nil otherButton:nil informativeTextWithFormat:@"Hey, don't push that!!"] runModal];
 }
 
 #pragma mark -
 #pragma mark NSTableView delegate/datasource methods
 
 - (NSInteger)numberOfRowsInTableView:(NSTableView *)tableView {
+
     return [content count];
 }
 
@@ -175,5 +172,21 @@ bool doAlert = true;
         NSLog(@"** Exiting : tableViewSelectionDidChange **");
     }
 }
+
+- (void)tableView:(NSTableView *)tableView willDisplayCell:(id)cell forTableColumn:(NSTableColumn *)tableColumn row:(NSInteger)row {    
+
+}
+
+- (void)tableSelectionChanged:(id)notification{
+    
+}
+
+- (void)tableView:(NSTableView *)tableView didClickTableColumn:(NSTableColumn *)tableColumn{
+    NSLog(@"didClickTableColumn: '%@'",tableColumn);
+    
+}
+
+// I don't have any better place for this snippet:
+//[[NSAlert alertWithMessageText:@"Random Button Pressed" defaultButton:@"OK" alternateButton:nil otherButton:nil informativeTextWithFormat:@"Hey, don't push that!!"] runModal];
 
 @end

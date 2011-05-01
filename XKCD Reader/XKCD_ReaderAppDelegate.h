@@ -20,6 +20,8 @@
     NSTableView *table;
     NSProgressIndicator *spinner;
     NSButton *saveButton;
+    NSTextField *titleLabel;
+    NSSearchField *searchBox;
     NSMutableDictionary *dict;
     NSMutableArray *content;
     XKCDScraper *scraper;
@@ -38,5 +40,7 @@
 @property (assign) IBOutlet NSTableView *table;
 @property (assign) IBOutlet NSProgressIndicator *spinner;
 @property (assign) IBOutlet NSButton *saveButton;
+@property (assign) IBOutlet NSTextField *titleLabel;
+@property (assign) IBOutlet NSSearchField *searchBox;
 
 @end

@@ -20,6 +20,8 @@
 @synthesize table;
 @synthesize spinner;
 @synthesize saveButton;
+@synthesize titleLabel;
+@synthesize searchBox;
 
 NSString *baseUrl = @"http://imgs.xkcd.com/comics/";
 NSString *file    = @"turtles.png";
@@ -47,6 +49,7 @@ bool doAlert = true;
     
     NSImage *logo_image = [[[NSImage alloc] initWithContentsOfURL:logo_url] autorelease];
     [xkcdImage setImage:logo_image];
+    [titleLabel setTitleWithMnemonic:@"XKCD"];
     
     [spinner setStyle:NSProgressIndicatorSpinningStyle];
     [spinner setHidden:FALSE];
@@ -106,11 +109,13 @@ bool doAlert = true;
     
     NSImage *xkcd_image = [[[NSImage alloc] initWithContentsOfURL:image_url] autorelease];
     [xkcdImage setImage:xkcd_image];
+    [titleLabel setTitleWithMnemonic:comic_str];
     [spinner stopAnimation:nil];
     
     // Select and focus on the randomly selected item
-//    [table shouldFocusCell:nil atColumn:0 row:random_elem];
-    
+    NSIndexSet *row_to_select = [[[NSIndexSet alloc] initWithIndex:random_elem] autorelease];
+    [table selectRowIndexes:row_to_select byExtendingSelection:FALSE];
+    [table scrollRowToVisible:random_elem];
 }
 
 #pragma mark -
@@ -163,7 +168,7 @@ bool doAlert = true;
         
         NSImage *xkcd_image = [[[NSImage alloc] initWithContentsOfURL:image] autorelease];
         [xkcdImage setImage:xkcd_image];
-        
+        [titleLabel setTitleWithMnemonic:comic_str];
         [spinner stopAnimation:nil];
         //[xkcdImage setImageWithURL:image];
     }

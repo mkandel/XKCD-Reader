@@ -1,3 +1,1 @@
-1. Open Your project in XCode and drag and drop all .h & .m Files into an appropriate folder
-2. In the project settings add "/usr/include/libxml2" to the "header search paths" field
-3. Ctrl Click the Frameworks group choose Add -> Existing Frameworks and from the list choose libxml2.dylib
+XKCD Reader is a project I created just to prove to myself I could get an OSX app working.  This has been superceeded by 'XKCD Reader 2.0', a much better designed version done for 1.7+.

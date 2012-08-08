@@ -21,7 +21,7 @@
 @synthesize spinner;
 @synthesize saveButton;
 @synthesize titleLabel;
-@synthesize searchBox;
+@synthesize filterBox;
 
 NSString *baseUrl = @"http://imgs.xkcd.com/comics/";
 NSString *file    = @"turtles.png";
@@ -69,6 +69,8 @@ bool doAlert = true;
     [scraper release];
     [dict release];
     [content release];
+    [xkcdImage release];
+    [super dealloc];
 }
 
 -(BOOL) applicationShouldTerminateAfterLastWindowClosed:(NSApplication *)theApplication{
@@ -81,7 +83,7 @@ bool doAlert = true;
         NSLog(@"Save button pressed ...");
     }
     
-    [[NSAlert alertWithMessageText:@"Save Button Pressed" defaultButton:@"OK" alternateButton:nil otherButton:nil informativeTextWithFormat:@"Save not implemented, sorry!!"] runModal];
+    [[NSAlert alertWithMessageText:@"Button Pressed!!" defaultButton:@"Go Away" alternateButton:nil otherButton:nil informativeTextWithFormat:@"I bet you thought pushing that button would do something interesting.  You were wrong ..."] runModal];
     
 }
 
@@ -116,6 +118,10 @@ bool doAlert = true;
     NSIndexSet *row_to_select = [[[NSIndexSet alloc] initWithIndex:random_elem] autorelease];
     [table selectRowIndexes:row_to_select byExtendingSelection:FALSE];
     [table scrollRowToVisible:random_elem];
+}
+
+- (IBAction)filterList:(id)sender {
+    
 }
 
 #pragma mark -
@@ -187,7 +193,9 @@ bool doAlert = true;
 }
 
 - (void)tableView:(NSTableView *)tableView didClickTableColumn:(NSTableColumn *)tableColumn{
-    NSLog(@"didClickTableColumn: '%@'",tableColumn);
+    // This is the action called when someone clicks the table header, typically a "sort" of the table
+    
+    //NSLog(@"didClickTableColumn: '%@'",tableColumn);
     
 }
 

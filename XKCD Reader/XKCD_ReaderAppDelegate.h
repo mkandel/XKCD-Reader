@@ -21,13 +21,14 @@
     NSProgressIndicator *spinner;
     NSButton *saveButton;
     NSTextField *titleLabel;
-    NSSearchField *searchBox;
+    NSSearchField *filterBox;
     NSMutableDictionary *dict;
     NSMutableArray *content;
     XKCDScraper *scraper;
 }
 - (IBAction)showRandomImage:(id)sender;
 - (IBAction)saveCurrent:(id)sender;
+- (IBAction)filterList:(id)sender;
 
 - (void)tableView:(NSTableView *)tableView didClickTableColumn:(NSTableColumn *)tableColumn;
 - (void)tableViewSelectionDidChange:(NSNotification *)aNotification;
@@ -41,6 +42,6 @@
 @property (assign) IBOutlet NSProgressIndicator *spinner;
 @property (assign) IBOutlet NSButton *saveButton;
 @property (assign) IBOutlet NSTextField *titleLabel;
-@property (assign) IBOutlet NSSearchField *searchBox;
+@property (assign) IBOutlet NSSearchField *filterBox;
 
 @end

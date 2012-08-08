@@ -1,0 +1,5 @@
+.DS_Store
+DerivedData/
+XKCD Reader.xcodeproj/project.xcworkspace/
+XKCD Reader.xcodeproj/xcuserdata/
+xkcd_512x512.png
